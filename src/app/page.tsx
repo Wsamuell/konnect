@@ -20,8 +20,11 @@ export default function Home() {
           >
             Bob
           </Link>
-          <button className="px-3 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
-            Join the Chat
+          <button
+            disabled={true}
+            className="px-3 py-2 bg-gray-500 text-white rounded"
+          >
+            Join the Chat!
           </button>
         </div>
       </nav>
@@ -37,13 +40,7 @@ export default function Home() {
           </p>
         </div>
         <div className="flex w-1/2 justify-center">
-          <Image
-            src={image}
-            alt="Konnect App Image"
-            width={500}
-            height={400}
-            className="rounded-lg"
-          />
+          <Image src={image} alt="Konnect App Image" width={500} height={400} />
         </div>
       </div>
     </main>
