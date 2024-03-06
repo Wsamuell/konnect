@@ -16,7 +16,8 @@ export const sendMessage = mutation({
 
 export const getMessages = query({
   handler: async (ctx) => {
-    // fix this to use the take method to grab first 10, it doent seem to work correctly ATM
-    return ctx.db.query('messages').collect();
+    // intersting, you can only grab the first 10 which is kind of wonky, so to past this, i am sorting in desending order and then grabbing the first 10 which ends up being the last 10 and then reverse it before returning it
+    const messages = await ctx.db.query('messages').order('desc').take(10);
+    return messages.reverse();
   },
 });
